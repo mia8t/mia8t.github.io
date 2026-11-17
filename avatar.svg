@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="500" height="600" role="img" aria-label="头像占位图">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe2d5"/>
+      <stop offset="1" stop-color="#f7efe2"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2b30"/>
+      <stop offset="1" stop-color="#17181c"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="500" height="600" rx="0"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="500" height="600" fill="url(#bg)"/>
+
+    <!-- 装饰圆环 -->
+    <circle cx="250" cy="250" r="150" fill="#d0452a" opacity="0.14"/>
+    <circle cx="250" cy="250" r="150" fill="none" stroke="#d0452a" stroke-opacity="0.35" stroke-width="1"/>
+    <circle cx="250" cy="250" r="196" fill="none" stroke="#17181c" stroke-opacity="0.08" stroke-width="1"/>
+
+    <!-- 抽象人像 -->
+    <circle cx="250" cy="232" r="62" fill="url(#body)"/>
+    <path d="M118 600c0-86 59-150 132-150s132 64 132 150z" fill="url(#body)"/>
+
+    <!-- 底部说明文字：换成真实照片后删掉本段即可 -->
+    <text x="250" y="566" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace"
+          font-size="13" letter-spacing="4" fill="#726e64">YOUR PHOTO</text>
+  </g>
+</svg>

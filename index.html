@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的名字 · 个人主页</title>
+
+  <!-- ===================================================================
+       ✏️ 修改 1/6：网页标题和简介（出现在浏览器标签页和搜索结果里）
+       格式：名字 · 身份
+  ==================================================================== -->
+  <meta name="description" content="你的名字的个人主页 —— 前端工程师，做界面，也做点小工具。" />
+  <meta name="author" content="你的名字" />
+
+  <!-- 分享到社交平台时的预览信息 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="你的名字 · 个人主页" />
+  <meta property="og:description" content="前端工程师，做界面，也做点小工具。" />
+  <!-- 分享封面：做一张 1200×630 的 png 放进 assets/，再把下面这行取消注释 -->
+  <!-- <meta property="og:image" content="assets/og-cover.png" /> -->
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 页面顶部的阅读进度条 -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============================== 导航 ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="回到顶部">
+        <span class="brand__mark" aria-hidden="true">Y</span>
+        <!-- ✏️ 修改 2/6：导航左侧显示的名字（建议用拼音或英文） -->
+        <span class="brand__text">YOUR NAME</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#work">作品</a>
+        <a href="#path">经历</a>
+        <a href="#contact">联系</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换深浅色" title="切换深浅色（快捷键 T）">
+          <svg class="ico ico--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.6M12 19v2.6M2.4 12h2.6M19 12h2.6M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"/></svg>
+          <svg class="ico ico--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"/></svg>
+        </button>
+        <button class="icon-btn nav__burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================== 首屏 ============================== -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow" data-reveal>
+            <span class="dot" aria-hidden="true"></span>
+            <!-- ✏️ 修改 3/6：你的当前身份 / 所在城市 -->
+            现居杭州 · 前端工程师 · 开放交流
+          </p>
+
+          <h1 class="hero__title" data-reveal>
+            你好，我是<br />
+            <span class="hero__name">你的名字</span>
+          </h1>
+
+          <p class="hero__lead" data-reveal>
+            我把复杂的想法做成简单好用的界面。写前端，也顺手做几个开源小工具——
+            喜欢干净的排版、克制的动效，和能被别人真的用起来的东西。
+          </p>
+
+          <div class="hero__cta" data-reveal>
+            <a class="btn btn--solid" href="#work">
+              看看我的作品
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="mailto:you@example.com">给我写邮件</a>
+          </div>
+
+          <dl class="stats" data-reveal>
+            <!-- ✏️ 修改 4/6：三个数字（改成你的真实情况，别吹） -->
+            <div><dt>5 年</dt><dd>产品前端经验</dd></div>
+            <div><dt>12 个</dt><dd>上线项目</dd></div>
+            <div><dt>3 个</dt><dd>开源仓库</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__card" data-reveal>
+          <div class="portrait">
+            <!-- ✏️ 换头像：把一张正方形照片命名为 avatar.jpg 放进 assets/ 文件夹，
+                 然后把下面这行的 src 改成 assets/avatar.jpg -->
+            <img src="avatar.svg" alt="你的名字的头像" width="480" height="560" />
+            <span class="portrait__cap">HELLO, WORLD</span>
+          </div>
+          <div class="hero__note">
+            <span class="hero__note-dot" aria-hidden="true"></span>
+            正在寻找有意思的合作
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#about" aria-label="向下滚动">
+        <span>SCROLL</span>
+        <span class="scroll-hint__line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============================== 关于 ============================== -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <span class="section__idx">01</span>
+          <h2>关于我</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="about">
+          <div class="about__text" data-reveal>
+            <!-- ✏️ 修改 5/6：两段自我介绍。第一段写"你是谁 + 在做什么"，
+                 第二段写"你怎么做事 / 在意什么"。 -->
+            <p>
+              我是<strong>你的名字</strong>，一名前端工程师。日常在浏览器里工作：
+              把设计稿变成能被点、被滑动、被理解的界面，顺带盯着首屏那一两百毫秒的差距。
+            </p>
+            <p>
+              我相信好产品是「减法」做出来的。所以我会花很多时间删掉不需要的按钮、
+              统一一套间距、把动画调到刚好不抢戏。工作之外，我用开源工具解决自己的小麻烦，
+              也把它们放出来给别人用。
+            </p>
+            <p class="about__sign">— 很高兴认识你 👋</p>
+          </div>
+
+          <aside class="about__side" data-reveal>
+            <h3 class="mini-title">常用工具</h3>
+            <ul class="tags">
+              <li>TypeScript</li><li>React</li><li>Vue</li><li>Node.js</li>
+              <li>CSS / 动效</li><li>数据可视化</li><li>Figma</li><li>Git</li>
+            </ul>
+            <h3 class="mini-title">最近在读</h3>
+            <ul class="list">
+              <li>《设计中的设计》— 原研哉</li>
+              <li>《Refactoring UI》</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 作品 ============================== -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <span class="section__idx">02</span>
+          <h2>作品</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+          <span class="section__hint">挑三个我最想讲的</span>
+        </div>
+
+        <div class="projects">
+          <!-- ✏️ 修改 6/6：每个项目一张卡片。想加项目就复制一整个 <article> 块 -->
+          <article class="project" data-reveal>
+            <div class="project__top">
+              <span class="project__no">01</span>
+              <span class="project__year">2025</span>
+            </div>
+            <h3 class="project__title">Nowa — 极简待办</h3>
+            <p class="project__desc">
+              一个只有「今天」的待办工具。没有项目、没有标签、没有优先级，
+              打开就知道现在该做什么。支持键盘全操作与离线使用。
+            </p>
+            <ul class="chips"><li>TypeScript</li><li>React</li><li>IndexedDB</li></ul>
+            <div class="project__links">
+              <a href="#" class="link-arrow">在线体验 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a href="#" class="link-arrow">源码 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </article>
+
+          <article class="project" data-reveal>
+            <div class="project__top">
+              <span class="project__no">02</span>
+              <span class="project__year">2024</span>
+            </div>
+            <h3 class="project__title">ChartKit — 图表组件库</h3>
+            <p class="project__desc">
+              为后台系统做的一套轻量可视化组件，内置 12 种图表与统一主题变量，
+              体积只有同类库的三分之一。已在三个内部系统里跑了两年。
+            </p>
+            <ul class="chips"><li>Canvas</li><li>Vue</li><li>Rollup</li></ul>
+            <div class="project__links">
+              <a href="#" class="link-arrow">文档 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a href="#" class="link-arrow">源码 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </article>
+
+          <article class="project" data-reveal>
+            <div class="project__top">
+              <span class="project__no">03</span>
+              <span class="project__year">2023</span>
+            </div>
+            <h3 class="project__title">慢读 — 稍后阅读</h3>
+            <p class="project__desc">
+              排版优先的阅读器：自动提取正文、去掉广告、保留脚注。
+              给「想认真读完一篇长文」的人用，而不是给收藏夹用。
+            </p>
+            <ul class="chips"><li>Node.js</li><li>SQLite</li><li>PWA</li></ul>
+            <div class="project__links">
+              <a href="#" class="link-arrow">在线体验 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 经历 ============================== -->
+    <section class="section" id="path">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <span class="section__idx">03</span>
+          <h2>经历</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+
+        <ol class="timeline">
+          <li data-reveal>
+            <span class="timeline__time">2024 — 至今</span>
+            <div class="timeline__body">
+              <h3>某科技公司 · 高级前端工程师</h3>
+              <p>负责内容产品的 Web 体验与性能治理，主导组件库从 0 到 1，首屏时间下降 42%。</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="timeline__time">2021 — 2024</span>
+            <div class="timeline__body">
+              <h3>某互联网公司 · 前端工程师</h3>
+              <p>做电商后台与数据看板，搭起团队的第一套可视化规范。</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="timeline__time">2019 — 2021</span>
+            <div class="timeline__body">
+              <h3>某创业团队 · 前端开发</h3>
+              <p>从零写完第一个正式上线的产品，学会了怎么和产品经理吵架又和好。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== 联系 ============================== -->
+    <section class="section section--contact" id="contact">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <span class="section__idx">04</span>
+          <h2>聊聊？</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="contact" data-reveal>
+          <div class="contact__main">
+            <p class="contact__lead">
+              不管是合作、招人，还是想问「这个效果怎么做」，
+              都欢迎直接发邮件给我。我通常两天内回复。
+            </p>
+            <div class="contact__mail">
+              <a id="mailLink" href="mailto:you@example.com">you@example.com</a>
+              <button class="copy" id="copyBtn" type="button" data-copy="you@example.com" aria-label="复制邮箱">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 5.5A1.5 1.5 0 0 0 13.5 4H5.5A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15"/></svg>
+                <span>复制</span>
+              </button>
+            </div>
+          </div>
+
+          <ul class="socials">
+            <li><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub <span>@yourname</span></a></li>
+            <li><a href="https://x.com/yourname" target="_blank" rel="noopener">X / Twitter <span>@yourname</span></a></li>
+            <li><a href="#" target="_blank" rel="noopener">即刻 <span>@yourname</span></a></li>
+            <li><a href="https://your-blog.com" target="_blank" rel="noopener">博客 <span>your-blog.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year">2026</span> 你的名字 · 手写 HTML/CSS，托管在 GitHub Pages</p>
+      <p class="footer__hint">按 <kbd>T</kbd> 切换深浅色</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
