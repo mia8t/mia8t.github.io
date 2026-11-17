@@ -852,3 +852,31 @@ kbd {
   }
   [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* Ya ting 的个人空间：文字名片与内容布局 */
+section[id], article[id] { scroll-margin-top: 90px; }
+.mia-status { margin-top: 22px; }
+.mia-letter-art {
+  aspect-ratio: 5 / 6;
+  border-radius: 4px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(circle at 90% 10%, #f4ccbb, transparent 65%), #eee5d7;
+  color: #262923;
+}
+.mia-art-note { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; }
+.mia-monogram { font-size: clamp(42px, 5vw, 64px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.12; color: #1f4b3f; }
+.mia-art-line { font-family: var(--font-mono); line-height: 1.65; font-size: 17px; }
+.mia-experience-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.mia-disclosure { font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+.mia-feature-project { max-width: 740px; }
+.hero__title { font-size: clamp(38px, 5.1vw, 64px); line-height: 1.16; }
+@media (max-width: 680px) {
+  .mia-experience-grid { grid-template-columns: 1fr; }
+  .hero__title { font-size: clamp(32px, 9.5vw, 54px); }
+  .hero__cta .btn { padding: 11px 17px; font-size: 13px; }
+  .mia-monogram { font-size: 52px; }
+  .socials a { flex-wrap: wrap; }
+}

@@ -3,300 +3,136 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>你的名字 · 个人主页</title>
-
-  <!-- ===================================================================
-       ✏️ 修改 1/6：网页标题和简介（出现在浏览器标签页和搜索结果里）
-       格式：名字 · 身份
-  ==================================================================== -->
-  <meta name="description" content="你的名字的个人主页 —— 前端工程师，做界面，也做点小工具。" />
-  <meta name="author" content="你的名字" />
-
-  <!-- 分享到社交平台时的预览信息 -->
+  <title>欢迎来到Mia的空间 · AIbuilder for HR</title>
+  <meta name="description" content="思维 I wonder，行动 always wanna be better，在招聘中妙用 AI。Mia 的个人空间：相关经验、上线项目与思维印迹。" />
+  <meta name="author" content="Ya ting" />
+  <meta name="theme-color" content="#f4f1ea" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="你的名字 · 个人主页" />
-  <meta property="og:description" content="前端工程师，做界面，也做点小工具。" />
-  <!-- 分享封面：做一张 1200×630 的 png 放进 assets/，再把下面这行取消注释 -->
-  <!-- <meta property="og:image" content="assets/og-cover.png" /> -->
-
+  <meta property="og:title" content="欢迎来到Mia的空间" />
+  <meta property="og:description" content="AIbuilder for HR · 思维 I wonder，行动 always wanna be better，在招聘中妙用 AI。" />
+  <meta property="og:url" content="https://mia8t.github.io/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- 页面顶部的阅读进度条 -->
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
-
-  <!-- ============================== 导航 ============================== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a class="brand" href="#top" aria-label="回到顶部">
-        <span class="brand__mark" aria-hidden="true">Y</span>
-        <!-- ✏️ 修改 2/6：导航左侧显示的名字（建议用拼音或英文） -->
-        <span class="brand__text">YOUR NAME</span>
-      </a>
-
+      <a class="brand" href="#top" aria-label="回到顶部"><span class="brand__mark" aria-hidden="true">Y</span><span class="brand__text">Ya ting</span></a>
       <nav class="nav__links" id="navLinks" aria-label="主导航">
-        <a href="#about">关于</a>
-        <a href="#work">作品</a>
-        <a href="#path">经历</a>
-        <a href="#contact">联系</a>
+        <a href="#about">关于我</a><a href="#path">相关经验</a><a href="#work">作品集</a><a href="#thoughts">思维印迹</a><a href="#contact">交流</a>
       </nav>
-
       <div class="nav__actions">
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换深浅色" title="切换深浅色（快捷键 T）">
           <svg class="ico ico--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.6M12 19v2.6M2.4 12h2.6M19 12h2.6M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"/></svg>
           <svg class="ico ico--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"/></svg>
         </button>
-        <button class="icon-btn nav__burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
+        <button class="icon-btn nav__burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
   </header>
-
   <main id="top">
-    <!-- ============================== 首屏 ============================== -->
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow" data-reveal>
-            <span class="dot" aria-hidden="true"></span>
-            <!-- ✏️ 修改 3/6：你的当前身份 / 所在城市 -->
-            现居杭州 · 前端工程师 · 开放交流
-          </p>
-
-          <h1 class="hero__title" data-reveal>
-            你好，我是<br />
-            <span class="hero__name">你的名字</span>
-          </h1>
-
-          <p class="hero__lead" data-reveal>
-            我把复杂的想法做成简单好用的界面。写前端，也顺手做几个开源小工具——
-            喜欢干净的排版、克制的动效，和能被别人真的用起来的东西。
-          </p>
-
+          <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span>AIbuilder for HR</p>
+          <h1 class="hero__title" data-reveal>欢迎来到<br /><span class="hero__name">Mia的空间</span></h1>
+          <p class="hero__lead" data-reveal>思维 I wonder，<br />行动 always wanna be better，<br />在招聘中妙用 AI。</p>
+          <ul class="tags mia-status" aria-label="当前状态" data-reveal><li>寻找工作机会</li><li>欢迎交流</li><li>接受合作</li><li>专注学习</li></ul>
           <div class="hero__cta" data-reveal>
-            <a class="btn btn--solid" href="#work">
-              看看我的作品
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="mailto:you@example.com">给我写邮件</a>
+            <a class="btn btn--solid" href="#experience">查看工作经历</a>
+            <a class="btn btn--ghost" href="#campus">查看校园经历</a>
+            <a class="btn btn--ghost" href="#work">查看作品集</a>
           </div>
-
-          <dl class="stats" data-reveal>
-            <!-- ✏️ 修改 4/6：三个数字（改成你的真实情况，别吹） -->
-            <div><dt>5 年</dt><dd>产品前端经验</dd></div>
-            <div><dt>12 个</dt><dd>上线项目</dd></div>
-            <div><dt>3 个</dt><dd>开源仓库</dd></div>
+          <dl class="stats" aria-label="空间的三个主题，而非数量统计" data-reveal>
+            <div><dt><a href="#path">01</a></dt><dd>相关经验</dd></div>
+            <div><dt><a href="#work">02</a></dt><dd>上线项目</dd></div>
+            <div><dt><a href="#thoughts">03</a></dt><dd>思维印迹</dd></div>
           </dl>
         </div>
-
         <div class="hero__card" data-reveal>
-          <div class="portrait">
-            <!-- ✏️ 换头像：把一张正方形照片命名为 avatar.jpg 放进 assets/ 文件夹，
-                 然后把下面这行的 src 改成 assets/avatar.jpg -->
-            <img src="avatar.svg" alt="你的名字的头像" width="480" height="560" />
-            <span class="portrait__cap">HELLO, WORLD</span>
+          <div class="portrait mia-letter-card">
+            <div class="mia-letter-art" aria-label="Huang yating 的文字名片"><span class="mia-art-note">PEOPLE × AI</span><span class="mia-monogram">Huang<br />yating</span><span class="mia-art-line">I wonder.<br />I build.<br />I keep learning.</span></div>
+            <span class="portrait__cap">Huang yating · ALWAYS ON THE WAY</span>
           </div>
-          <div class="hero__note">
-            <span class="hero__note-dot" aria-hidden="true"></span>
-            正在寻找有意思的合作
-          </div>
+          <div class="hero__note"><span class="hero__note-dot" aria-hidden="true"></span>探索中，一直在路上</div>
         </div>
       </div>
-
-      <a class="scroll-hint" href="#about" aria-label="向下滚动">
-        <span>SCROLL</span>
-        <span class="scroll-hint__line" aria-hidden="true"></span>
-      </a>
+      <a class="scroll-hint" href="#about" aria-label="向下阅读"><span>EXPLORE</span><span class="scroll-hint__line" aria-hidden="true"></span></a>
     </section>
-
-    <!-- ============================== 关于 ============================== -->
     <section class="section" id="about">
       <div class="wrap">
-        <div class="section__head" data-reveal>
-          <span class="section__idx">01</span>
-          <h2>关于我</h2>
-          <span class="section__rule" aria-hidden="true"></span>
-        </div>
-
+        <div class="section__head" data-reveal><span class="section__idx">01</span><h2>关于我</h2><span class="section__rule" aria-hidden="true"></span></div>
         <div class="about">
           <div class="about__text" data-reveal>
-            <!-- ✏️ 修改 5/6：两段自我介绍。第一段写"你是谁 + 在做什么"，
-                 第二段写"你怎么做事 / 在意什么"。 -->
-            <p>
-              我是<strong>你的名字</strong>，一名前端工程师。日常在浏览器里工作：
-              把设计稿变成能被点、被滑动、被理解的界面，顺带盯着首屏那一两百毫秒的差距。
-            </p>
-            <p>
-              我相信好产品是「减法」做出来的。所以我会花很多时间删掉不需要的按钮、
-              统一一套间距、把动画调到刚好不抢戏。工作之外，我用开源工具解决自己的小麻烦，
-              也把它们放出来给别人用。
-            </p>
-            <p class="about__sign">— 很高兴认识你 👋</p>
+            <p>我在探索：AI 时代的到来，可以怎样为我的兴趣、工作方向和未来发展赋能。<strong>一直在路上。</strong></p>
+            <p>我有社会学、心理学与社会工作的交叉学习背景，擅长与人交流、发现需求、方案落地和数据分析。我的关注点是招聘、产品与内容创作，也在探索 Skill 与 Prompt 的应用。</p>
+            <p>做好一件事情的前提，首先是做到，然后要做好。<strong>把自己视为工作的主人，而非奴隶。</strong></p>
+            <p class="about__sign">— Ya ting · I wonder, always wanna be better.</p>
           </div>
-
           <aside class="about__side" data-reveal>
-            <h3 class="mini-title">常用工具</h3>
-            <ul class="tags">
-              <li>TypeScript</li><li>React</li><li>Vue</li><li>Node.js</li>
-              <li>CSS / 动效</li><li>数据可视化</li><li>Figma</li><li>Git</li>
-            </ul>
-            <h3 class="mini-title">最近在读</h3>
-            <ul class="list">
-              <li>《设计中的设计》— 原研哉</li>
-              <li>《Refactoring UI》</li>
-            </ul>
+            <h3 class="mini-title">工具与关注领域</h3><ul class="tags"><li>Skill</li><li>Prompt</li><li>招聘</li><li>产品</li><li>内容创作</li><li>需求发现</li><li>数据分析</li></ul>
+            <h3 class="mini-title">生活里的我</h3><ul class="tags"><li>散步</li><li>桌游</li><li>英剧 / 美剧</li></ul>
+            <h3 class="mini-title">最近在读 · 最近在看</h3><ul class="list"><li>慢慢地读《黑暗的左手》</li><li>快快地看《扫垃圾》</li></ul>
           </aside>
         </div>
       </div>
     </section>
-
-    <!-- ============================== 作品 ============================== -->
-    <section class="section" id="work">
-      <div class="wrap">
-        <div class="section__head" data-reveal>
-          <span class="section__idx">02</span>
-          <h2>作品</h2>
-          <span class="section__rule" aria-hidden="true"></span>
-          <span class="section__hint">挑三个我最想讲的</span>
-        </div>
-
-        <div class="projects">
-          <!-- ✏️ 修改 6/6：每个项目一张卡片。想加项目就复制一整个 <article> 块 -->
-          <article class="project" data-reveal>
-            <div class="project__top">
-              <span class="project__no">01</span>
-              <span class="project__year">2025</span>
-            </div>
-            <h3 class="project__title">Nowa — 极简待办</h3>
-            <p class="project__desc">
-              一个只有「今天」的待办工具。没有项目、没有标签、没有优先级，
-              打开就知道现在该做什么。支持键盘全操作与离线使用。
-            </p>
-            <ul class="chips"><li>TypeScript</li><li>React</li><li>IndexedDB</li></ul>
-            <div class="project__links">
-              <a href="#" class="link-arrow">在线体验 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a href="#" class="link-arrow">源码 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-          </article>
-
-          <article class="project" data-reveal>
-            <div class="project__top">
-              <span class="project__no">02</span>
-              <span class="project__year">2024</span>
-            </div>
-            <h3 class="project__title">ChartKit — 图表组件库</h3>
-            <p class="project__desc">
-              为后台系统做的一套轻量可视化组件，内置 12 种图表与统一主题变量，
-              体积只有同类库的三分之一。已在三个内部系统里跑了两年。
-            </p>
-            <ul class="chips"><li>Canvas</li><li>Vue</li><li>Rollup</li></ul>
-            <div class="project__links">
-              <a href="#" class="link-arrow">文档 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a href="#" class="link-arrow">源码 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-          </article>
-
-          <article class="project" data-reveal>
-            <div class="project__top">
-              <span class="project__no">03</span>
-              <span class="project__year">2023</span>
-            </div>
-            <h3 class="project__title">慢读 — 稍后阅读</h3>
-            <p class="project__desc">
-              排版优先的阅读器：自动提取正文、去掉广告、保留脚注。
-              给「想认真读完一篇长文」的人用，而不是给收藏夹用。
-            </p>
-            <ul class="chips"><li>Node.js</li><li>SQLite</li><li>PWA</li></ul>
-            <div class="project__links">
-              <a href="#" class="link-arrow">在线体验 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== 经历 ============================== -->
     <section class="section" id="path">
       <div class="wrap">
-        <div class="section__head" data-reveal>
-          <span class="section__idx">03</span>
-          <h2>经历</h2>
-          <span class="section__rule" aria-hidden="true"></span>
+        <div class="section__head" data-reveal><span class="section__idx">02</span><h2>相关经验</h2><span class="section__rule" aria-hidden="true"></span></div>
+        <div class="mia-experience-grid">
+          <article class="project" id="experience" data-reveal>
+            <div class="project__top"><span class="project__no">WORK</span><span>工作方向</span></div>
+            <h3 class="project__title">工作经历</h3>
+            <p class="project__desc">关注招聘、产品与内容创作，探索 AI 在招聘中的应用。</p>
+            <ul class="chips"><li>与人交流</li><li>发现需求</li><li>方案落地</li><li>数据分析</li></ul>
+            <p class="mia-disclosure">具体任职信息与经历尚未公开。</p>
+          </article>
+          <article class="project" id="campus" data-reveal>
+            <div class="project__top"><span class="project__no">CAMPUS</span><span>交叉学习</span></div>
+            <h3 class="project__title">校园经历</h3>
+            <p class="project__desc">社会学、心理学与社会工作的交叉学习背景，是我理解人、探索需求的起点。</p>
+            <ul class="chips"><li>社会学</li><li>心理学</li><li>社会工作</li></ul>
+            <p class="mia-disclosure">具体院校、学习时间与校园活动尚未公开。</p>
+          </article>
         </div>
-
-        <ol class="timeline">
-          <li data-reveal>
-            <span class="timeline__time">2024 — 至今</span>
-            <div class="timeline__body">
-              <h3>某科技公司 · 高级前端工程师</h3>
-              <p>负责内容产品的 Web 体验与性能治理，主导组件库从 0 到 1，首屏时间下降 42%。</p>
-            </div>
-          </li>
-          <li data-reveal>
-            <span class="timeline__time">2021 — 2024</span>
-            <div class="timeline__body">
-              <h3>某互联网公司 · 前端工程师</h3>
-              <p>做电商后台与数据看板，搭起团队的第一套可视化规范。</p>
-            </div>
-          </li>
-          <li data-reveal>
-            <span class="timeline__time">2019 — 2021</span>
-            <div class="timeline__body">
-              <h3>某创业团队 · 前端开发</h3>
-              <p>从零写完第一个正式上线的产品，学会了怎么和产品经理吵架又和好。</p>
-            </div>
-          </li>
-        </ol>
       </div>
     </section>
-
-    <!-- ============================== 联系 ============================== -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section__head" data-reveal><span class="section__idx">03</span><h2>作品集</h2><span class="section__rule" aria-hidden="true"></span><span class="section__hint">从想法到上线</span></div>
+        <article class="project mia-feature-project" data-reveal>
+          <div class="project__top"><span class="project__no">LIVE</span><span>个人空间</span></div>
+          <h3 class="project__title">Mia的空间</h3>
+          <p class="project__desc">我的个人主页，用来记录相关经验、上线项目与思维印迹。这里是探索的起点，也是一扇交流的窗口。</p>
+          <ul class="chips"><li>个人主页</li><li>GitHub Pages</li></ul>
+          <div class="project__links"><a class="link-arrow" href="https://mia8t.github.io/">访问主页 ↗</a><a class="link-arrow" href="https://github.com/mia8t/mia8t.github.io" target="_blank" rel="noopener">查看源码 ↗</a></div>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="thoughts">
+      <div class="wrap">
+        <div class="section__head" data-reveal><span class="section__idx">04</span><h2>思维印迹</h2><span class="section__rule" aria-hidden="true"></span></div>
+        <div class="projects">
+          <article class="project" data-reveal><div class="project__top"><span class="project__no">WONDER</span><span>保持好奇</span></div><h3 class="project__title">思维 I wonder</h3><p class="project__desc">探索 AI 时代可以怎样为我的兴趣、工作方向和未来发展赋能，一直在路上。</p></article>
+          <article class="project" data-reveal><div class="project__top"><span class="project__no">DO</span><span>先做到，再做好</span></div><h3 class="project__title">always wanna be better</h3><p class="project__desc">做好一件事情的前提，首先是做到，然后要做好。把自己视为工作的主人，而非奴隶。</p></article>
+          <article class="project" data-reveal><div class="project__top"><span class="project__no">LIFE</span><span>慢与快之间</span></div><h3 class="project__title">在生活里继续探索</h3><p class="project__desc">散步、桌游、英剧与美剧。慢慢地读《黑暗的左手》，快快地看《扫垃圾》。</p></article>
+        </div>
+      </div>
+    </section>
     <section class="section section--contact" id="contact">
       <div class="wrap">
-        <div class="section__head" data-reveal>
-          <span class="section__idx">04</span>
-          <h2>聊聊？</h2>
-          <span class="section__rule" aria-hidden="true"></span>
-        </div>
-
+        <div class="section__head" data-reveal><span class="section__idx">05</span><h2>欢迎交流</h2><span class="section__rule" aria-hidden="true"></span></div>
         <div class="contact" data-reveal>
-          <div class="contact__main">
-            <p class="contact__lead">
-              不管是合作、招人，还是想问「这个效果怎么做」，
-              都欢迎直接发邮件给我。我通常两天内回复。
-            </p>
-            <div class="contact__mail">
-              <a id="mailLink" href="mailto:you@example.com">you@example.com</a>
-              <button class="copy" id="copyBtn" type="button" data-copy="you@example.com" aria-label="复制邮箱">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 5.5A1.5 1.5 0 0 0 13.5 4H5.5A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15"/></svg>
-                <span>复制</span>
-              </button>
-            </div>
-          </div>
-
-          <ul class="socials">
-            <li><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub <span>@yourname</span></a></li>
-            <li><a href="https://x.com/yourname" target="_blank" rel="noopener">X / Twitter <span>@yourname</span></a></li>
-            <li><a href="#" target="_blank" rel="noopener">即刻 <span>@yourname</span></a></li>
-            <li><a href="https://your-blog.com" target="_blank" rel="noopener">博客 <span>your-blog.com</span></a></li>
-          </ul>
+          <div class="contact__main"><p class="contact__lead">寻找工作机会，欢迎交流与合作，也保持专注学习。关于 AI、招聘、产品或内容创作，期待遇见同样好奇的人。</p><div class="hero__cta"><a class="btn btn--solid" href="https://github.com/mia8t" target="_blank" rel="noopener">访问我的 GitHub ↗</a></div></div>
+          <ul class="socials"><li><a href="https://github.com/mia8t" target="_blank" rel="noopener">GitHub <span>@mia8t</span></a></li><li><a href="https://github.com/mia8t/mia8t.github.io" target="_blank" rel="noopener">这个空间的源码 <span>GitHub Pages ↗</span></a></li></ul>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <p>© <span id="year">2026</span> 你的名字 · 手写 HTML/CSS，托管在 GitHub Pages</p>
-      <p class="footer__hint">按 <kbd>T</kbd> 切换深浅色</p>
-    </div>
-  </footer>
-
+  <footer class="footer"><div class="wrap footer__inner"><p>© <span id="year">2026</span> Ya ting · Mia的空间</p><p>AIbuilder for HR · 按 <kbd>T</kbd> 切换深浅色</p></div></footer>
   <script src="main.js"></script>
 </body>
 </html>
