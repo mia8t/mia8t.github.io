@@ -982,6 +982,7 @@ section[id], article[id] { scroll-margin-top: 90px; }
 .list li { padding: 7px 0; }
 
 .timeline > li { padding: 22px 0; }
+.timeline__body { max-width: 660px; }
 .timeline__body h3 { margin-bottom: 3px; }
 .mia-job__meta { margin-bottom: 8px; }
 .mia-job__list { gap: 6px; margin-top: 10px; }
