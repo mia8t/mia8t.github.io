@@ -121,41 +121,7 @@
     revealItems.forEach(function (el) { reveal.observe(el); });
   }
 
-  /* --------------------------- 5. 复制邮箱 --------------------------- */
-  var copyBtn = document.getElementById("copyBtn");
-  if (copyBtn) {
-    copyBtn.addEventListener("click", function () {
-      var text = copyBtn.getAttribute("data-copy") || "";
-      var label = copyBtn.querySelector("span");
-      var done = function () {
-        copyBtn.classList.add("is-done");
-        if (label) label.textContent = "已复制";
-        setTimeout(function () {
-          copyBtn.classList.remove("is-done");
-          if (label) label.textContent = "复制";
-        }, 1600);
-      };
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, fallback);
-      } else {
-        fallback();
-      }
-
-      function fallback() {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand("copy"); done(); } catch (e) {}
-        document.body.removeChild(ta);
-      }
-    });
-  }
-
-  /* --------------------------- 6. 页脚年份 --------------------------- */
+  /* --------------------------- 5. 页脚年份 --------------------------- */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
