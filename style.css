@@ -621,9 +621,9 @@ button { font: inherit; color: inherit; }
 
 /* 经历 */
 .timeline { border-top: 1px solid var(--line); }
-.timeline li {
+.timeline > li {
   display: grid;
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
   gap: 32px;
   padding: 30px 0;
   border-bottom: 1px solid var(--line);
@@ -647,9 +647,9 @@ button { font: inherit; color: inherit; }
 .timeline__body p {
   font-size: 14.5px;
   color: var(--muted);
-  max-width: 46em;
+  max-width: none;
 }
-.timeline li:hover .timeline__body h3 { color: var(--accent); }
+.timeline > li:hover .timeline__body h3 { color: var(--accent); }
 
 /* 联系 */
 .section--contact { padding-bottom: 92px; }
@@ -810,7 +810,7 @@ kbd {
   .section__head { margin-bottom: 40px; gap: 12px; flex-wrap: wrap; }
   .section__hint { display: none; }
   .projects { grid-template-columns: 1fr; }
-  .timeline li { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+  .timeline > li { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
   .footer__inner { flex-direction: column; gap: 6px; }
 }
 
@@ -906,7 +906,7 @@ section[id], article[id] { scroll-margin-top: 90px; }
   font-size: 14.2px;
   line-height: 1.85;
   color: var(--muted);
-  max-width: 46em;
+  max-width: none;
 }
 .mia-job__list li::before {
   content: "";
@@ -981,7 +981,7 @@ section[id], article[id] { scroll-margin-top: 90px; }
 .tags li { padding: 5px 11px; }
 .list li { padding: 7px 0; }
 
-.timeline li { padding: 22px 0; }
+.timeline > li { padding: 22px 0; }
 .timeline__body h3 { margin-bottom: 3px; }
 .mia-job__meta { margin-bottom: 8px; }
 .mia-job__list { gap: 6px; margin-top: 10px; }
