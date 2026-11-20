@@ -1205,3 +1205,29 @@ body { line-height: 1.68; }
 #thoughts .project__top { margin-bottom: 14px; }
 #thoughts .project__title { font-size: 18px; margin-bottom: 8px; }
 #thoughts .project__desc { font-size: 13.6px; line-height: 1.68; }
+
+/* ---------------- 底部：回到名片 ---------------- */
+.to-top-row {
+  margin-top: 22px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: flex-end;
+}
+.to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: var(--surface);
+  transition: color 0.25s, border-color 0.25s, transform 0.25s;
+}
+.to-top__arrow { font-size: 12px; line-height: 1; transition: transform 0.25s; }
+.to-top:hover { color: var(--accent); border-color: var(--accent); }
+.to-top:hover .to-top__arrow { transform: translateY(-3px); }

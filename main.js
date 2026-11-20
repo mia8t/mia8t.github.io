@@ -121,7 +121,48 @@
     revealItems.forEach(function (el) { reveal.observe(el); });
   }
 
-  /* --------------------------- 5. 页脚年份 --------------------------- */
+  /* --------------------------- 5. 回到顶部 --------------------------- */
+  // 自己驱动滚动，保证一定能落回首屏（原生 smooth 在部分环境会被挂起）
+  var rootEl = document.documentElement;
+  function scrollToTop() {
+    var start = window.pageYOffset || rootEl.scrollTop || 0;
+    var prevBehavior = rootEl.style.scrollBehavior;
+    rootEl.style.scrollBehavior = "auto";
+
+    function land() {
+      rootEl.scrollTop = 0;
+      document.body.scrollTop = 0;
+      rootEl.style.scrollBehavior = prevBehavior;
+    }
+
+    if (reduceMotion || start <= 0) { land(); return; }
+
+    var duration = 520;
+    var startTime = null;
+    function step(now) {
+      if (startTime === null) startTime = now;
+      var p = Math.min((now - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      rootEl.scrollTop = start * (1 - eased);
+      if (p < 1) requestAnimationFrame(step);
+      else land();
+    }
+    requestAnimationFrame(step);
+    // 兜底：帧回调被挂起时（如后台标签页）直接落位
+    setTimeout(function () {
+      if ((window.pageYOffset || rootEl.scrollTop || 0) > 40) land();
+    }, duration + 500);
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#top"]'), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      scrollToTop();
+      if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    });
+  });
+
+  /* --------------------------- 6. 页脚年份 --------------------------- */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
