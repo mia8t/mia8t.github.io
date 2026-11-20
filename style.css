@@ -1254,6 +1254,22 @@ body { line-height: 1.68; }
   background: rgba(242, 112, 63, 0.1);
 }
 
+/* 作品 02：两个入口并排 */
+.mia-work__links {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mia-slot--gh {
+  color: var(--ink-2);
+  border-color: var(--line-strong);
+  background: transparent;
+}
+.mia-slot--gh:hover { color: var(--accent); border-color: var(--accent); background: rgba(208, 69, 42, 0.06); }
+[data-theme="dark"] .mia-slot--gh { color: var(--ink-2); border-color: var(--line-strong); background: transparent; }
+
 /* ---------------- 底部：回到名片 ---------------- */
 .to-top-row {
   margin-top: 22px;
