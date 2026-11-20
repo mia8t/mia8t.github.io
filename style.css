@@ -1018,3 +1018,73 @@ section[id], article[id] { scroll-margin-top: 90px; }
   .section__head { margin-bottom: 24px; }
   .mia-section-lead { margin-top: -8px; margin-bottom: 20px; }
 }
+
+/* ---------------- 时间轴：两段经历用一条竖向轴线串联 ---------------- */
+.timeline__time { position: relative; text-align: right; padding-right: 10px; }
+.timeline__time::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: -22px;
+  bottom: -22px;
+  width: 1px;
+  background: var(--line-strong);
+  opacity: 0.6;
+}
+.timeline__time::before {
+  content: "";
+  position: absolute;
+  right: -21px;
+  top: 10px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--accent);
+  box-sizing: border-box;
+}
+.timeline > li:first-child .timeline__time::after { top: 15px; }
+.timeline > li:last-child .timeline__time::after { bottom: auto; height: 37px; }
+.timeline > li:hover .timeline__time::before { background: var(--accent); }
+
+/* ---------------- 交付成果数据行 ---------------- */
+.mia-kpi {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px dashed var(--line);
+  max-width: 660px;
+}
+.mia-kpi > div { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.mia-kpi dt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.mia-kpi dd { font-size: 13.2px; line-height: 1.68; color: var(--ink-2); }
+
+/* ---------------- 一级 / 二级序号区分 ---------------- */
+.section__idx {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  align-self: flex-start;
+  padding-top: 6px;
+}
+.project__no {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+  .timeline__time::before, .timeline__time::after { display: none; }
+  .mia-kpi > div { grid-template-columns: 1fr; gap: 2px; }
+  .mia-kpi dt { font-size: 9.5px; }
+  .mia-kpi dd { font-size: 13px; }
+}
