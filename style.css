@@ -1139,6 +1139,18 @@ body { line-height: 1.68; }
   .mia-kpi dd { font-size: 13px; }
 }
 
+/* 合规小标签：数据已执行脱敏 */
+.chips li.chip--privacy {
+  color: var(--accent-2);
+  border-color: rgba(31, 75, 63, 0.32);
+  background: rgba(31, 75, 63, 0.06);
+}
+[data-theme="dark"] .chips li.chip--privacy {
+  color: #9ecdb8;
+  border-color: rgba(158, 205, 184, 0.35);
+  background: rgba(158, 205, 184, 0.1);
+}
+
 /* ---------------- 作品卡底部：标签与材料占位并成一行 ---------------- */
 .mia-work__foot {
   margin-top: auto;
@@ -1151,6 +1163,7 @@ body { line-height: 1.68; }
   flex-wrap: wrap;
 }
 .mia-work__foot .chips { margin: 0; }
+.mia-work__foot .mia-slot { margin-left: auto; }
 .mia-slot {
   display: inline-flex;
   align-items: center;
@@ -1200,7 +1213,8 @@ body { line-height: 1.68; }
 .mia-work__rows { gap: 8px; }
 .mia-row p { font-size: 13.1px; line-height: 1.6; }
 .mia-work__foot { padding-top: 9px; }
-.mia-work .chips { margin: 0; }
+.mia-work .chips { margin: 0; gap: 5px; }
+.mia-work .chips li { padding: 4px 8px; }
 #thoughts .projects { gap: 16px; }
 #thoughts .project { padding: 22px 20px 20px; }
 #thoughts .project__top { margin-bottom: 14px; }
